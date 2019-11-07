@@ -75,5 +75,13 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            addShortText(text: "ok $GIT_HASH", border: 0, color: 'darkgreen')
+        }
+        failure {
+            addShortText(text: "failed $GIT_HASH", border: 0, color: 'red')
+        }
+    }
 }
 
